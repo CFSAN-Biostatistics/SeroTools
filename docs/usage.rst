@@ -4,6 +4,8 @@ Usage
 
 .. highlight:: none
 
+SeroTools provides methods for querying, comparing, and predicting serovar names and antigenic formulae.
+
 .. _query-label:
 
 query
