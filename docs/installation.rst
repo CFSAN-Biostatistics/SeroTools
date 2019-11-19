@@ -14,7 +14,7 @@ Or, if you have virtualenvwrapper installed::
     $ pip install serotools
 
 
-Upgrading WKLM
+Upgrading SeroTools
 -----------------------------------------
 
 If you previously installed with pip, you can upgrade to the newest version from the command line::
@@ -22,7 +22,7 @@ If you previously installed with pip, you can upgrade to the newest version from
     $ pip install --user --upgrade serotools
 
 
-Uninstalling WKLM
+Uninstalling SeroTools
 --------------------------------------------
 
 If you installed with pip, you can uninstall from the command line::
