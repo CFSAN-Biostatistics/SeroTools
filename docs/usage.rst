@@ -9,10 +9,13 @@ serovar name or antigenic formula as a command line argument or in an input file
 of a single query per line:: 
 
     $ serotools query -i <input_file>
+    
+or::
 
     $ serotools query -s 'Paratyphi A'
     
-    
+Output::
+
     Input	     Name	      Formula
     Paratyphi A	 Paratyphi A  I [1],2,12:a:[1,5]
 
