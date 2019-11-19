@@ -6,11 +6,11 @@ Usage
 
 The White-Kauffmann-Le Minor (WKLM) repository may be queried by submitting an appropriate 
 serovar name or antigenic formula as a command line argument or in an input file composed 
-of a single query per line. 
+of a single query per line:: 
 
-    serotools query -i <input_file>
+    $ serotools query -i <input_file>
 
-    serotools query -s 'Paratyphi A'
+    $ serotools query -s 'Paratyphi A'
     
     
     Input	     Name	      Formula
@@ -19,7 +19,7 @@ of a single query per line.
 SeroTools provides functionality for comparing serovar predictions by evaluating multiple
 states of congruence (exact, congruent, minimally congruent, incongruent). Serovar names 
 and/or antigenic formulae may be submitted as as a command line argument or in a 
-tab-delimited input file composed of two columns of serovar predictions for comparison.  
+tab-delimited input file composed of two columns of serovar predictions for comparison::  
 
     serotools compare -i <input_file>
 
@@ -32,7 +32,7 @@ tab-delimited input file composed of two columns of serovar predictions for comp
 SeroTools also provides the ability to predict which serovars are most likely
 represented by (minimally congruent with) a serovar name or antigenic formula, which
 may be submitted as a command line argument or in an input file composed of a single 
-query on each line.
+query on each line::
 
     serotools predict -i <input_file>
 
