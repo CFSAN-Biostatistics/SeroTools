@@ -48,7 +48,7 @@ def parse_arguments(system_args):
                      congruent, minimally congruent, or incongruent."""
     subparser = subparsers.add_parser("compare", formatter_class=formatter_class, description=description, help=help_str)
     subparser.add_argument(      "--header",dest="header",     action="store_true",           help="The input file includes a header line.")
-    subparser.add_argument("-i", "--input", dest="input_file", type=str, metavar="INPUT_FILE",  help="Specify a tab-delimited input file with two columns of serovars for comparison.")
+    subparser.add_argument("-i", "--input", dest="in_file", type=str, metavar="INPUT_FILE",  help="Specify a tab-delimited input file with two columns of serovars for comparison.")
     subparser.add_argument("-1", "--subj",  dest="subj",       type=str, metavar="SEROVAR1",  help="Specify the first serovar for comparison.")
     subparser.add_argument("-2", "--query", dest="query",      type=str, metavar="SEROVAR2", help="Specify the second serovar for comparison.")
     subparser.set_defaults(func=compare_command)
