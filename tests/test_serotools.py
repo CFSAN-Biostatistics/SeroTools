@@ -241,6 +241,8 @@ def test_incongruent_SeroComp():
     """Serovar name compared to formula missing required factor and extra factor present"""
     assert SeroComp('Montevideo', 'I 7,8:g,m,s:–').result == 'incongruent'
 
+    """Individual factors are subsets, but neither formula is a proper subset of the other"""
+    assert SeroComp('I 4,5:a,b:6,7', 'I 5:a,b,c:6,7').result == 'incongruent'
 
 def test_compare(tmpdir,capsys):                        
 
@@ -310,16 +312,16 @@ def test_is_min_subset():
     assert sero.is_min_subset('5','5') == True
     assert sero.is_min_subset('5','4') == False
     
-    """z15 is a proper subset of e,n,z15"""    
-    assert sero.is_min_subset('e,n,z15','z15') == True
+    """z15 is a subset of e,n,z15, e,n,z15 is not a subset of z15"""    
+    assert sero.is_min_subset('e,n,z15','z15') == False
     
-    """Neither is a subset"""
+    """Not a subset"""
     assert sero.is_min_subset('e,n,z15','z39') == False
     
     """e,n,z15 is a proper subset of e,n,z15,z39"""
     assert sero.is_min_subset('e,n,z15','e,n,z15,z39') == True
     
-    """Neither is a subset"""
+    """Not a subset"""
     assert sero.is_min_subset('e,n,z15','e,n,z39') == False
     
     """Both are proper subsets"""
@@ -328,23 +330,29 @@ def test_is_min_subset():
     """6,7,8 is a proper subset of 6,7,8,9"""
     assert sero.is_min_subset('6,7,8,[14],[54]','6,7,8,9') == True
     
-    """Neither is a subset"""    
+    """Not a subset"""    
     assert sero.is_min_subset('6,7,8,10,[14],[54]','6,7,8,9') == False
     
     """Both are proper subsets"""
     assert sero.is_min_subset('g,m,[p],s','g,m,p,s') == True
     
     """m,p,s is a proper subset of g,m,[p],s"""
-    assert sero.is_min_subset('g,m,[p],s','m,p,s') == True
-    
+    assert sero.is_min_subset('m,p,s','g,m,[p],s') == True
+ 
+    """g,m,[p],s is not a subset of m,p,s"""
+    assert sero.is_min_subset('g,m,[p],s','m,p,s') == False
+   
     """m is a proper subset of g,[m],[s],[t]"""
-    assert sero.is_min_subset('g,[m],[s],[t]','m') == True
+    assert sero.is_min_subset('m','g,[m],[s],[t]') == True
     
     """the empty set is a proper subset of the empty set"""
     assert sero.is_min_subset('[1,2,7]','–') == True
+
+    """the empty set is a proper subset of the empty set"""
+    assert sero.is_min_subset('–','[1,2,7]') == True
     
     """the empty set is a proper subset of 1,2,7"""
-    assert sero.is_min_subset('1,2,7','–') == True
+    assert sero.is_min_subset('–','1,2,7') == True
 
     """the empty set is a proper subset of the empty set"""    
     assert sero.is_min_subset('–','–') == True

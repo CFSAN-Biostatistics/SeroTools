@@ -312,40 +312,35 @@ class SeroComp(object):
                 
         if self.is_exact():
             return True
-
+        
+        result = False
+        
         for subj_obj, query_obj, in zip(self.subj['wklm_objs'], self.query['wklm_objs']):    
-
-            finished = False
-            result = False
             
             ## subsp ##
             
             if subj_obj.subsp and query_obj.subsp:             
                 if subj_obj.subsp == query_obj.subsp:
                     result = True
-                else:
+                else:    
                     continue        
 
             ## antigens ##
 
-            pairs = [[subj_obj.O, query_obj.O],[subj_obj.P1, query_obj.P1],
+            s_pairs = [[subj_obj.O, query_obj.O],[subj_obj.P1, query_obj.P1],
                     [subj_obj.P2, query_obj.P2],[subj_obj.other_H, query_obj.other_H]]
-            for pair in pairs:        
-                subj, query = pair
-                if subj and query:
-                    if subj != missing_antigen and query != missing_antigen: 
-                        result = is_min_subset(subj,query)  
-                        if result == False:
-                            break
-                elif result == True:
-                     finished = True
-                     break
-                else:
-                    break
-            if finished == True:
-                break
-            else:
-                continue                               
+            q_pairs = [[query_obj.O, subj_obj.O],[query_obj.P1, subj_obj.P1],
+                    [query_obj.P2, subj_obj.P2],[query_obj.other_H, subj_obj.other_H]]
+            for pairs in [s_pairs, q_pairs]:
+                for pair in pairs:        
+                    a1, a2 = pair
+                    if a1 and a2:
+                        if a1 != missing_antigen and a2 != missing_antigen: 
+                            result = is_min_subset(a1,a2)  
+                            if result == False:
+                                break
+                if result == True:
+                    return True
              
         return result
 
@@ -426,7 +421,7 @@ def formula_to_fields(formula):
 
                           
 def is_min_subset(factors1,factors2):
-    """Determines if either set of minimal factors is a proper subset of the other set 
+    """Determines if a set of minimal factors is a proper subset of a set 
        of max factors.
     Args:
        factors1(str): comma-delimited factors.
@@ -438,14 +433,10 @@ def is_min_subset(factors1,factors2):
     factors1 = factors1.lower()
     factors2 = factors2.lower() 
         
-    min1 = min_factors(factors1)
-    min2 = min_factors(factors2)
-    all1 = max_factors(factors1)
-    all2 = max_factors(factors2)
+    f_min = min_factors(factors1)
+    f_all = max_factors(factors2)
 
-    if (not min1 or not min2 or min1 == {missing_antigen} or min2 == {missing_antigen} or
-        min1.issubset(all2) or min2.issubset(all1)):     
-#   if min1 == missing_antigen or min2 == missing antigen or min1.issubset(all2) or min2.issubset(all1): 
+    if not f_min or f_min == {missing_antigen} or f_min.issubset(f_all):     
         return True
     else:
         return False
