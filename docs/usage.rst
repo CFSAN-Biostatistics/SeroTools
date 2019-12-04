@@ -11,8 +11,8 @@ SeroTools provides methods for querying, comparing, and predicting serovar names
 query
 -----
 
-The White-Kauffmann-Le Minor (WKLM) repository can be queried by submitting an appropriate 
-serovar name or antigenic formula in an input file composed of a single query per line:: 
+The White-Kauffmann-Le Minor (WKLM) repository can be queried by submitting one or more appropriate 
+serovar names or antigenic formulae in an input file composed of a single query per line:: 
 
     $ serotools query -i <input_file>
     
@@ -43,7 +43,7 @@ or as command line arguments::
 
 Output::
 
-    Subject	 Name  Formula	   Query	   Name	 Formula	 Result
+    Serovar1	 Name  Formula	   Serovar2	   Name	 Formula	 Result
     Hull	 Hull  I 16:b:1,2  I 16:b:1,2  Hull	 I 16:b:1,2	 exact match
 
 .. _predict-label:
