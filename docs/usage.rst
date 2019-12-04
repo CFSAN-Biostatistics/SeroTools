@@ -69,8 +69,8 @@ Output::
     I 2,12:–:–  Nitra        I 2,12:g,m:–
     I 2,12:–:–  Paratyphi A  I [1],2,12:a:[1,5]
       
+      
 Input Formatting
-----------------
 
 The input data must follow the nomenclature conventions as specified in [1]_.
 
