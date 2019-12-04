@@ -254,7 +254,7 @@ def test_compare(tmpdir,capsys):
     sero.compare(input_file=file1)
     in_cap = capsys.readouterr()
     in_expected = '{}\t{}\t{}\t{}\t{}\t{}\t{}\n{}\t{}\t{}\t{}\t{}\t{}\t{}\n'.format(
-                  'Subject','Name','Formula','Query','Name','Formula','Result',
+                  'Serovar1','Name','Formula','Serovar2','Name','Formula','Result',
                   'Kumasi','Kumasi','I 30:z10:e,n,z15','I 30:z10:e,n,z15','Kumasi','I 30:z10:e,n,z15','exact match')      
     assert in_cap.out == in_expected
 
@@ -275,7 +275,7 @@ def test_compare(tmpdir,capsys):
     sero.compare(subj='Kumasi',query='I 30:z10:e,n,z15')
     args_cap = capsys.readouterr()    
     args_expected = '{}\t{}\t{}\t{}\t{}\t{}\t{}\n{}\t{}\t{}\t{}\t{}\t{}\t{}\n'.format(
-                  'Subject','Name','Formula','Query','Name','Formula','Result',
+                  'Serovar1','Name','Formula','Serovar2','Name','Formula','Result',
                   'Kumasi','Kumasi','I 30:z10:e,n,z15','I 30:z10:e,n,z15','Kumasi','I 30:z10:e,n,z15','exact match')
     assert args_cap.out == args_expected
  
@@ -283,7 +283,7 @@ def test_compare(tmpdir,capsys):
     sero.compare(subj='test',query='I 30:z10:e,n,z15')
     inv_cap = capsys.readouterr()    
     inv_expected = '{}\t{}\t{}\t{}\t{}\t{}\t{}\n{}\t{}\t{}\t{}\t{}\t{}\t{}\n'.format(
-                  'Subject','Name','Formula','Query','Name','Formula','Result',
+                  'Serovar1','Name','Formula','Serovar2','Name','Formula','Result',
                   'test','NA','NA','I 30:z10:e,n,z15','Kumasi','I 30:z10:e,n,z15','invalid input')
     assert inv_cap.out == inv_expected
   
