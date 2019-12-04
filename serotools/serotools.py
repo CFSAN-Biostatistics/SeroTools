@@ -381,7 +381,7 @@ def compare(input_file='', subj='', query='', header=False):
             header_line[0],'Name','Formula',header_line[1],'Name','Formula','Result'))
     else:
         print('{}\t{}\t{}\t{}\t{}\t{}\t{}'.format(
-            'Subject','Name','Formula','Query','Name','Formula','Result'))
+            'Serovar1','Name','Formula','Serovar2','Name','Formula','Result'))
             
     for pair in sero_pairs:
         sero_obj = None
