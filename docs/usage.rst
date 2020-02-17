@@ -67,5 +67,4 @@ Output::
     ClusterID	ClusterSize	Input	Name	Formula	    P_Exact	P_Congruent	P_MinCon
     cluster1	2	        Dunkwa	Dunkwa	I 6,8:d:1,7	0.6667	0.6667	    0.6667
     cluster2	1	        Hull	Hull	I 16:b:1,2	1.0	    1.0	        1.0
-
-      
+    
