@@ -5,7 +5,7 @@ Usage
 .. highlight:: none
 
 SeroTools provides methods for querying and comparing serovar names and antigenic formulae, 
-as well as determining the most abundant serovar in a cluster of isolates.
+as well as determining the most abundant serovar for a cluster of isolates.
 
 .. _query-label:
 
