@@ -3,7 +3,7 @@
 History
 =======
 
-0.2.0 (2020-02-16)
+0.2.0 (2020-02-17)
 ---------------------
 
 Significant updates in this version - not backwards compatible.
