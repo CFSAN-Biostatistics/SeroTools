@@ -4,7 +4,8 @@ Usage
 
 .. highlight:: none
 
-SeroTools provides methods for querying, comparing, and predicting serovar names and antigenic formulae.
+SeroTools provides methods for querying and comparing serovar names and antigenic formulae, 
+as well as determining the most abundant serovar in a cluster of isolates.
 
 .. _query-label:
 
@@ -22,8 +23,8 @@ or as a command line argument::
     
 Output::
 
-    Input	     Name	      Formula	            Match
-    Paratyphi A	 Paratyphi A  I [1],2,12:a:[1,5]	exact
+    Input        Name         Formula             Match
+    Paratyphi A  Paratyphi A  I [1],2,12:a:[1,5]  exact
 
 .. _compare-label:
 
@@ -42,16 +43,15 @@ or as command line arguments::
 
 Output::
 
-    Serovar1	Name  Formula	  Query	      Name	 Formula	 Result
-    Hull	    Hull  I 16:b:1,2  I 16:b:1,2  Hull	 I 16:b:1,2	 exact
+    Serovar1    Name    Formula     Serovar2    Name    Formula     Result
+    Hull        Hull    I 16:b:1,2  I 16:b:1,2  Hull    I 16:b:1,2  exact
 
-.. _predict-label:
+.. _cluster-label:
 
 cluster
 -------
-Determine the most abundant serovar(s) for one or more clusters of closely related 
-isolates. Each line of a tab-delimited input file should contain a cluster ID and one 
-serovar as follows:::
+Determine the most abundant serovar(s) for one or more clusters of isolates. Each line
+of a tab-delimited input file should contain a cluster ID and one serovar as follows:::
 
 Input::
 
@@ -59,12 +59,14 @@ Input::
     cluster1	Dunkwa
     cluster1	Utah
     cluster2	Hull
+    
+::
 
     $ serotools cluster -i <input_file>
     
 Output::
 
-    ClusterID	ClusterSize	Input	Name	Formula	    P_Exact	P_Congruent	P_MinCon
-    cluster1	2	        Dunkwa	Dunkwa	I 6,8:d:1,7	0.6667	0.6667	    0.6667
-    cluster2	1	        Hull	Hull	I 16:b:1,2	1.0	    1.0	        1.0
+    ClusterID   ClusterSize Input   Name    Formula      P_Exact  P_Congruent	P_MinCon
+    cluster1    2           Dunkwa  Dunkwa  I 6,8:d:1,7  0.6667   0.6667        0.6667
+    cluster2    1           Hull    Hull    I 16:b:1,2   1.0      1.0           1.0
     
