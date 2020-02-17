@@ -16,7 +16,8 @@ SeroTools
 This package serves as a toolkit and repository for the White-Kauffmann-Le Minor scheme 
 for Salmonella serotyping, which defines nomenclature and antigenic factors for each 
 recognized serovar. The scheme is made available in multiple formats, along with methods 
-for querying, comparing, and predicting serovar names and antigenic formulae.
+for querying and comparing serovar names and antigenic formulae, as well as determining 
+the most abundant serovar for a cluster of isolates.
 
 SeroTools was developed by the United States Food and Drug Administration, Center for Food 
 Safety and Applied Nutrition.
@@ -34,7 +35,7 @@ Features
 
 * Compare serovar predictions for state of congruence
 
-* Determine the most abundant serovar from a cluster of isolates
+* Determine the most abundant serovar for a cluster of isolates
 
 
 Citing SeroTools
