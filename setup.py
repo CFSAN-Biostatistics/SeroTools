@@ -25,7 +25,7 @@ test_requirements = [
 setup(
     name='serotools',
     version='0.2.0',
-    description="This package serves as a toolkit and repository for the White-Kauffmann-Le Minor scheme for Salmonella serotyping, which defines nomenclature and antigenic factors for each recognized serovar. The scheme is made available in multiple formats, along with methods for querying, comparing, and predicting serovar names and antigenic formulae.",
+    description="This package serves as a toolkit and repository for the White-Kauffmann-Le Minor scheme for Salmonella serotyping, which defines nomenclature and antigenic factors for each recognized serovar. The scheme is made available in multiple formats, along with methods for querying and comparing serovar names and antigenic formulae, as well as determining the most abundant serovar for a cluster of isolates.",
     long_description=readme + '\n\n' + history,
     author="Joseph D. Baugher, Ph.D.",
     author_email='joseph.baugher@fda.hhs.gov',
