@@ -35,39 +35,50 @@ def parse_arguments(system_args):
 
     formatter_class = argparse.ArgumentDefaultsHelpFormatter
 
-    help_str = """Query the WKLM database with a serovar name/formula in order to
-                     retrieve a corresponding name/formula."""
+    help_str = """Query the WKLM database with one or more serovar names or antigenic formulas."""
     description = help_str
     subparser = subparsers.add_parser("query", formatter_class=formatter_class, description=description, help=help_str)
-    subparser.add_argument("-i", "--input",   dest="in_file", type=str, metavar="INPUT_FILE",  help="Specify an input file with one query (serovar or antigenic formula) per line.")
-    subparser.add_argument("-s", "--serovar", dest="serovar", type=str, metavar="SEROVAR", help="Specify a query (serovar name or antigenic formula).")
+    subparser.add_argument("-i", "--input",   dest="in_file", type=str,            help="Specify an input file with one query (serovar or antigenic formula) per line.")
+    subparser.add_argument("-s", "--serovar", dest="serovar", type=str,            help="Specify a query (serovar name or antigenic formula).")
+    subparser.add_argument("-e", "--exact",   dest="exact",   action="store_true", help="Find exact matches only.")
     subparser.set_defaults(func=query_command)
 
-    help_str = "Compare two serovars for congruency."
-    description = help_str + """Possible results are exact match, 
-                     congruent, minimally congruent, or incongruent."""
+    help_str = "Compare one of more pairs of serovars for congruency."
+    description = help_str
     subparser = subparsers.add_parser("compare", formatter_class=formatter_class, description=description, help=help_str)
-    subparser.add_argument(      "--header",dest="header",     action="store_true",           help="The input file includes a header line.")
-    subparser.add_argument("-i", "--input", dest="in_file", type=str, metavar="INPUT_FILE",  help="Specify a tab-delimited input file with two columns of serovars for comparison.")
-    subparser.add_argument("-1", "--subj",  dest="subj",       type=str, metavar="SEROVAR1",  help="Specify the first serovar for comparison.")
-    subparser.add_argument("-2", "--query", dest="query",      type=str, metavar="SEROVAR2", help="Specify the second serovar for comparison.")
+    subparser.add_argument(      "--header",dest="header",  action="store_true",  help="The input file includes a header line.")
+    subparser.add_argument("-i", "--input", dest="in_file", type=str,             help="Specify a tab-delimited input file with two columns of serovars for comparison.")
+    subparser.add_argument("-1", "--subj",  dest="subj",    type=str,             help="Specify the first serovar for comparison.")
+    subparser.add_argument("-2", "--query", dest="query",   type=str,             help="Specify the second serovar for comparison.")
     subparser.set_defaults(func=compare_command)
 
-    help_str = """Predict which serovars are mostly likely to be represented by 
-                  (are minimally congruent with) a serovar name or antigenic formula."""
+    help_str = """Determine the most abundant serovar(s) for one or more clusters of isolates."""
     description = help_str
-    subparser = subparsers.add_parser("predict", formatter_class=formatter_class, description=description, help=help_str)
-    subparser.add_argument("-i", "--input",   dest="in_file", type=str, metavar="INPUT_FILE",  help="Specify an input file with one query (serovar or antigenic formula) per line.")
-    subparser.add_argument("-s", "--serovar", dest="serovar", type=str, metavar="SEROVAR", help="Specify a query (serovar name or antigenic formula).")
-    subparser.set_defaults(func=predict_command)
+    subparser = subparsers.add_parser("cluster", formatter_class=formatter_class, description=description, help=help_str)
+    subparser.add_argument("-i", "--input",     dest="in_file", type=str, help="Specify a tab-delimited input file in which each line contains two fields: a cluster id and a serovar designation, respectively.")
+    subparser.add_argument("-s", "--sortby",    dest="sort_by", type=str, help="One or more comma-delim options for ordered sort results. Options = m (min_con), c (congruent), e (exact), i (init). Default = c,e,i.")                               
+    subparser.add_argument("-v", "--verbosity", dest="v",       type=int, help="Verbosity of output. 1 - serovar info. 2 - serovar and abundance. 3 - all metrics.")
+    subparser.set_defaults(func=cluster_command)
 
     args = parser.parse_args(system_args)
     return args
 
 
+def cluster_command(args):
+    """Determine the most abundant serovar(s) for one or more clusters of closely related 
+       isolates.
+    Parameters
+    ----------
+    args : Namespace
+        Command line arguments stored as attributes of a Namespace, usually
+        parsed from sys.argv, but can be set programmatically for unit testing
+        or other purposes.
+    """
+    sero.cluster(args.in_file, args.sort_by, args.v)
+
+
 def compare_command(args):
-    """Compare two serovars for congruency. Possible results are exact match, 
-       congruent, minimally congruent, or incongruent.""
+    """Compare one of more pairs of serovars for congruency.
     Parameters
     ----------
     args : Namespace
@@ -78,28 +89,15 @@ def compare_command(args):
     sero.compare(args.in_file, args.subj, args.query, args.header)
 
 
-def predict_command(args):
-    """Predicts which serovars are mostly likely to be represented by 
-    (are minimally congruent with) a serovar name or antigenic formula.
-    ----------
-    args : Namespace
-        Command line arguments stored as attributes of a Namespace, usually
-        parsed from sys.argv, but can be set programmatically for unit testing
-        or other purposes.
-    """
-    sero.predict(args.in_file, args.serovar)
-
-
 def query_command(args):
-    """Query the WKLM database with a serovar name/formula in order to
-       retrieve corresponding name/formula.
+    """Query the WKLM database with one or more serovar names or antigenic formulas.
     ----------
     args : Namespace
         Command line arguments stored as attributes of a Namespace, usually
         parsed from sys.argv, but can be set programmatically for unit testing
         or other purposes.
     """
-    sero.query(args.in_file, args.serovar)
+    sero.query(args.in_file, args.serovar, args.exact)
 
 
 def run_command_from_args(args):

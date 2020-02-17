@@ -13,6 +13,7 @@ Contents:
 
    readme
    installation
+   formatting
    usage
    notes
    references

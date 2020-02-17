@@ -2,6 +2,11 @@
 Credits
 =======
 
+Author
+----------------
+
+* Joseph D. Baugher, Ph.D. <joseph.baugher@fda.hhs.gov>
+
 Development Lead
 ----------------
 

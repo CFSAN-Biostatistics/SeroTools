@@ -34,8 +34,7 @@ Features
 
 * Compare serovar predictions for state of congruence
 
-* Predict serovars mostly likely represented by (minimally congruent with) an 
-  antigenic formula
+* Determine the most abundant serovar from a cluster of isolates
 
 
 Citing SeroTools
