@@ -998,8 +998,6 @@ def query(input_file='',serovar='',exact=False):
             serovars = i.readlines()
     elif serovar:
         serovars = [ serovar ]
-    elif not exact and not congruent and not min_congruent:
-        raise Exception('Please specify a congruency level (exact, congruent, or min_congruent)!')  
     else:    
         raise Exception('Please provide a query!')  
         
