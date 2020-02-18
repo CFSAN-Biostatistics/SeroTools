@@ -15,6 +15,7 @@ Contents:
    installation
    formatting
    usage
+   congruence
    notes
    references
    authors
