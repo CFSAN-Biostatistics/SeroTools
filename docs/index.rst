@@ -16,6 +16,7 @@ Contents:
    formatting
    usage
    congruence
+   repository
    notes
    references
    authors
