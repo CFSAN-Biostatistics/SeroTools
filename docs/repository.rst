@@ -8,41 +8,29 @@ SeroTools provides a repository of the White-Kauffmann-Le Minor (WKLM) Salmonell
 
 - Python data structures (`serotools.py <serotools/serotools.py>`__)
 
-  - pandas DataFrame 
+  - pandas DataFrame:: 
   
-    - wklm_df
+      wklm_df
     
-  - Dictionaries
+  - Dictionaries::
   
-    - wklm_name_to_formula
+      wklm_name_to_formula
+      wklm_formula_to_name
     
-    - wklm_formula_to_name
-    
-  - Lists with common indexing
+  - Lists with common indexing::
   
-    - wklm_name
-    
-    - std_wklm_name (standardized for matching)
-    
-    - wklm_formula
-    
-    - std_wklm_formula (standardized for matching)
-    
-    - wklm_sp (species)
-    
-    - wklm_subsp (subspecies)
-    
-    - wklm_O
-    
-    - wklm_P1
-    
-    - wklm_P2
-    
-    - wklm_other_H
-    
-    - wklm_group
-    
-    - wklm_old_group
+      wklm_name
+      std_wklm_name (standardized for matching)
+      wklm_formula
+      std_wklm_formula (standardized for matching)
+      wklm_sp (species)
+      wklm_subsp (subspecies)
+      wklm_O
+      wklm_P1
+      wklm_P2
+      wklm_other_H
+      wklm_group (O group)
+      wklm_old_group (previous O group)
     
 - An Excel spreadsheet (`White-Kauffman-LeMinor-Scheme.xlsx <wklm_scheme/White-Kauffman-LeMinor-Scheme.xlsx>`__)
 
