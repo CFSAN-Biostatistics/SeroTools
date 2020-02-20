@@ -46,12 +46,6 @@ Congruent matches must meet the following criteria:
 minimally congruent
 -------------------
 
-The minimally congruent designation is unique to SeroTools and is useful for distinguishing between two scenarios: 
-
-- Serovars which differ due to sample misannotation (incongruent)
-
-- Serovars derived from correctly annotated samples with variation based solely on missing information. When comparing serovar designations, minor differences may be expected due to method-specific irregularities, for example reagent variation for laboratory-based techniques or the presence of nonproductive genomic data when comparing antigenic agglutination to *in silico*-based techniques. Our assumption is that these minor method-specific differences are more likely manifested as missing data (e.g. all but one of the correct factors were detected) than direct conflicts. 
-
 Minimally congruent matches must meet the following criteria:
 
 - Every antigen of at least one serovar can be considered a formal subset of the corresponding antigen (no direct conflicts). For example::
@@ -61,6 +55,13 @@ Minimally congruent matches must meet the following criteria:
     I 7:g:–                       I 6,7:g,m,s:–
     Gallinarum                    Enteritidis
 * Note - the empty set (–) is a subset of every set
+
+The minimally congruent designation is unique to SeroTools and is useful for distinguishing between two scenarios: 
+
+- Serovars which differ due to sample misannotation (incongruent)
+
+- Serovars derived from correctly annotated samples with variation based solely on missing information. When comparing serovar designations, minor differences may be expected due to method-specific irregularities, for example reagent variation for laboratory-based techniques or the presence of nonproductive genomic data when comparing antigenic agglutination to *in silico*-based techniques. Our assumption is that these minor method-specific differences are more likely manifested as missing data (e.g. all but one of the correct factors were detected) than direct conflicts. 
+
 
 incongruent
 -----------
