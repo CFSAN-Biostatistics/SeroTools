@@ -12,7 +12,7 @@ as well as determining the most abundant serovar for a cluster of isolates.
 query
 -----
 
-Query the White-Kauffmann-Le Minor (WKLM) repository by submitting one of more 
+Query the White-Kauffmann-Le Minor (WKL) repository by submitting one of more 
 serovar names or antigenic formulas in an input file composed of a single query per line:: 
 
     $ serotools query -i <input_file>
