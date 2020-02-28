@@ -26,7 +26,7 @@ def parse_arguments(system_args):
         Command line arguments are stored as attributes of a Namespace.
     """
 
-    description = """Tools for accessing the White-Kauffmann-Le Minor (WKLM) Salmonella 
+    description = """Tools for accessing the White-Kauffmann-Le Minor (WKL) Salmonella 
                      serotyping scheme and for comparing serovars for congruency."""
     parser = argparse.ArgumentParser(description=description)
     parser.add_argument("-v", "--version", action="version", version="%(prog)s version " + __version__)
@@ -35,7 +35,7 @@ def parse_arguments(system_args):
 
     formatter_class = argparse.ArgumentDefaultsHelpFormatter
 
-    help_str = """Query the WKLM database with one or more serovar names or antigenic formulas."""
+    help_str = """Query the WKL database with one or more serovar names or antigenic formulas."""
     description = help_str
     subparser = subparsers.add_parser("query", formatter_class=formatter_class, description=description, help=help_str)
     subparser.add_argument("-i", "--input",   dest="in_file", type=str,            help="Specify an input file with one query (serovar or antigenic formula) per line.")
@@ -90,7 +90,7 @@ def compare_command(args):
 
 
 def query_command(args):
-    """Query the WKLM database with one or more serovar names or antigenic formulas.
+    """Query the WKL database with one or more serovar names or antigenic formulas.
     ----------
     args : Namespace
         Command line arguments stored as attributes of a Namespace, usually
