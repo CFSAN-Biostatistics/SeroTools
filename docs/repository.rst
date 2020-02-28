@@ -4,7 +4,7 @@ Repository
 
 .. highlight:: none
 
-SeroTools provides a repository of the White-Kauffmann-Le Minor (WKLM) Salmonella serotyping scheme based on these `references <references.rst>`__ in the following formats:
+SeroTools provides a repository of the White-Kauffmann-Le Minor (WKL) Salmonella serotyping scheme based on these `references <references.rst>`__ in the following formats:
 
 - Python data structures (`serotools.py <serotools/serotools.py>`__)
 
