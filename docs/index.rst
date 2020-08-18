@@ -13,6 +13,7 @@ Contents:
 
    readme
    installation
+   statement_of_need
    formatting
    usage
    congruence
