@@ -4,9 +4,9 @@ Repository
 
 .. highlight:: none
 
-SeroTools provides a repository of the White-Kauffmann-Le Minor (WKL) Salmonella serotyping scheme based on these `references <references.rst>`__ in the following formats:
+SeroTools provides a repository of the White-Kauffmann-Le Minor (WKL) Salmonella serotyping scheme based on these :ref:`references-label` in the following formats:
 
-- Python data structures (`serotools.py <serotools/serotools.py>`__)
+- Python data structures (`serotools.py <https://github.com/CFSAN-Biostatistics/SeroTools/blob/master/serotools/serotools.py>`__)
 
   - pandas DataFrame:: 
   
@@ -32,6 +32,6 @@ SeroTools provides a repository of the White-Kauffmann-Le Minor (WKL) Salmonella
       wklm_group (O group)
       wklm_old_group (previous O group)
     
-- An Excel spreadsheet (`White-Kauffman-LeMinor-Scheme.xlsx <wklm_scheme/White-Kauffman-LeMinor-Scheme.xlsx>`__)
+- An Excel spreadsheet (`White-Kauffman-LeMinor-Scheme.xlsx <https://github.com/CFSAN-Biostatistics/SeroTools/blob/master/wklm_scheme/White-Kauffman-LeMinor-Scheme.xlsx>`__)
 
-- A tab-delimited text file (`White-Kauffman-LeMinor_scheme.tsv <wklm_scheme/White-Kauffman-LeMinor_scheme.tsv>`__)
+- A tab-delimited text file (`White-Kauffman-LeMinor_scheme.tsv <https://github.com/CFSAN-Biostatistics/SeroTools/blob/master/wklm_scheme/White-Kauffman-LeMinor_scheme.tsv>`__)
