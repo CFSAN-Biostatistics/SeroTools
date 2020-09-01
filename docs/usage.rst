@@ -51,7 +51,7 @@ Output::
 cluster
 -------
 Determine the most abundant serovar(s) for one or more clusters of isolates. Input data must be 
-submitted in the form of a tab-delimited file in which each line consists of a cluster ID and one serovar as follows:::
+submitted in the form of a tab-delimited file in which each line consists of a cluster ID and one serovar as follows::
 
 Input - example.txt::
 
