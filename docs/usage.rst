@@ -50,10 +50,10 @@ Output::
 
 cluster
 -------
-Determine the most abundant serovar(s) for one or more clusters of isolates. Each line
-of a tab-delimited input file should contain a cluster ID and one serovar as follows:::
+Determine the most abundant serovar(s) for one or more clusters of isolates. Input data must be 
+submitted in the form of a tab-delimited file in which each line consists of a cluster ID and one serovar as follows:::
 
-Input::
+Input - example.txt::
 
     cluster1	Dunkwa
     cluster1	Dunkwa
@@ -62,7 +62,7 @@ Input::
     
 ::
 
-    $ serotools cluster -i <input_file>
+    $ serotools cluster -i example.txt
     
 Output::
 
