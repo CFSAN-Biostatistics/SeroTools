@@ -128,7 +128,7 @@ The 'minimally congruent' designation is unique to SeroTools and is useful for
 distinguishing between two scenarios: serovars which differ due to sample misannotation 
 (truly incongruent) and serovars derived from correctly annotated samples with variation 
 based solely on missing information. When comparing serovar predictions, minor 
-differences may be expected due to method-specific irregularities, for example reagent 
+differences may be expected due to method-specific irregularities, for example, reagent 
 variation for laboratory-based techniques or sequencing read coverage for *in silico* 
 techniques. Our assumption is that these minor method-specific differences are more likely manifested as missing data (e.g. all but one of the correct factors were detected) than direct conflicts.
 
