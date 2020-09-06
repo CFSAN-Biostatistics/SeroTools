@@ -11,6 +11,10 @@ SeroTools
 .. .. image:: https://img.shields.io/travis/CFSAN-Biostatistics/serotools.svg
 ..        :target: https://travis-ci.org/CFSAN-Biostatistics/serotools
 
+.. Image showing the JOSS paper badge
+.. image:: https://joss.theoj.org/papers/10.21105/joss.02556/status.svg
+   :target: https://doi.org/10.21105/joss.02556
+
 This package serves as a toolkit and repository for the White-Kauffmann-Le Minor scheme for *Salmonella* serotyping, which is made available in multiple formats, along with methods for querying and comparing serovar names and antigenic formulae, as well as determining the most abundant serovar for a cluster of isolates.
 
 SeroTools was developed by the United States Food and Drug Administration, Center for Food 
@@ -44,9 +48,10 @@ Features
 Citing SeroTools
 --------------------------------------
 
-To cite SeroTools, please reference the SeroTools GitHub repository:
+If you use SeroTools, please cite the following publication:
+   
+Baugher, J. D., (2020). SeroTools: a Python package for Salmonella serotype data analysis. Journal of Open Source Software, 5(53), 2556, https://doi.org/10.21105/joss.02556.
 
-    https://github.com/CFSAN-Biostatistics/serotools
 
 
 License
